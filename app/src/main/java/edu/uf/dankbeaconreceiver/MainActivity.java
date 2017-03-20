@@ -254,6 +254,8 @@ public class MainActivity extends AppCompatActivity //implements BluetoothAdapte
 
                     Toast.makeText(ctxt, bluetoothDevice.getName() + " " + uuid, Toast.LENGTH_SHORT).show();
 
+                    Log.d("[OMG-------]", bluetoothDevice.getName() + " and " + bluetoothDevice.getAddress());
+                    Log.d("[OMG----------]", scanRecord.getDeviceName() + " and " + bluetoothDevice.getAddress());
                     postBeaconWithNameUUID(bluetoothDevice, uuid);
                 }
             }
@@ -336,7 +338,10 @@ public class MainActivity extends AppCompatActivity //implements BluetoothAdapte
             {
                 Map<String, String>  params = new HashMap<>();
                 // the POST parameters:
-                params.put("name", bd.getName());
+                if(bd.getName() == null)
+                    params.put("name", "");
+                else
+                    params.put("name", bd.getName());
                 params.put("uuid", uuid.toString());
                 params.put("address", bd.getAddress());
                 params.put("mbedid", uids.get(bd.getAddress()));
