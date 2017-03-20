@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.uf.dankbeaconreceiver.MainActivity"
+    android:background="#f58a18">
+
+    <TextView
+        android:id="@+id/URLlabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="URL:"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="10pt"
+        android:textColor="#ccc"/>
+
+    <EditText
+        android:id="@+id/urlTextBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/URLlabel"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="10pt"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="#888"
+        android:hint="Enter IP address..."
+        android:text="http://192.168.0.13:8080/device"/>
+
+    <TextView
+        android:id="@+id/UUIDlabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/urlTextBox"
+        android:text="UUID:"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="10pt"
+        android:textColor="#ccc"/>
+
+    <EditText
+        android:id="@+id/uuidTextBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/UUIDlabel"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="8pt"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="#888"
+        android:hint="Enter your UUID..."
+        android:text="12345678-abcd-0000-1234-000000000000"/>
+
+    <TextView
+        android:id="@+id/foundLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/uuidTextBox"
+        android:layout_marginTop="30dp"
+        android:text="Devices found"
+        android:textColor="#ddd"
+        android:textSize="12pt"/>
+
+    <TextView
+        android:id="@+id/deviceCountView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foundLabel"
+        android:layout_centerHorizontal="true"
+        android:text="0"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#ddd"
+        android:textSize="40pt"/>
+
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Scan"
+        android:layout_below="@id/deviceCountView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#f53d18"
+        android:text="APP IDLE"
+        android:textSize="10pt"
+        android:textColor="#eee"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/statusText"
+        android:text="Hint: Enter the MQTT server address and UUID. Then hit 'Start Scan' to find all surrounding beacons."
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="italic"
+        android:textColor="#555"/>
+
+</RelativeLayout>
